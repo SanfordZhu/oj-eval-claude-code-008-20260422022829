@@ -1,0 +1,6 @@
+# Minimal printf: output "048" for input '0'
+[0]<I
+O<48
+O<52
+O<56
+Z<1
