@@ -1,0 +1,19 @@
+# Problem 2279: echo
+# Set flag at address 255 = 1
+[255]<1
+
+# Main loop:
+# Read char into memory[0]
+[0]<I
+
+# Output char
+O<[0]
+
+# Check if char == 0 (EOF)
+A<[0]
+B<[A+255]  # B = 1 if A == 0 (since [255]=1), else 0
+
+# Set Z = B (halt if EOF)
+Z<B
+
+# Loop continues if Z=0

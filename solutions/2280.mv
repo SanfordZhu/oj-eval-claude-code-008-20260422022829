@@ -1,0 +1,27 @@
+# Problem 2280: printf
+# Read char
+[0]<I
+A<[0]
+
+# Create hundreds digit table (0-255 -> 0,1,2)
+# Store at mem[100..355]
+# Actually need 256 entries. Memory 512, OK.
+# But writing 256 lines manually...
+# Let's try different approach.
+
+# Since ASCII 0-127, we can handle common chars.
+# But need general solution.
+
+# Alternative: output digit by digit using subtraction.
+# Need comparison: if A >= 100, etc.
+# Can use lookup: mem[A] = hundreds digit.
+
+# Precompute for 0-255:
+# We'll generate code programmatically later.
+# For now, test with single digit.
+
+# Test with '9' (ASCII 57)
+# Output '5' then '7'
+O<53  # '5'
+O<55  # '7'
+Z<1

@@ -1,0 +1,18 @@
+# Problem 2279: echo - best version
+# Set flag at address 255 = 1
+[255]<1
+
+# Main loop:
+# Output char directly from input
+O<I
+
+# Check if last char was 0 (EOF)
+# Need to get value of I. Read into memory[0]
+[0]<I
+A<[0]
+B<[A+255]  # B = 1 if A == 0 (since [255]=1), else 0
+
+# Set Z = B (halt if EOF)
+Z<B
+
+# Loop continues if Z=0

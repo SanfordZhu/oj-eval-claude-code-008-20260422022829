@@ -1,0 +1,14 @@
+# Problem 2276: Hello World
+O<72    # H
+O<101   # e
+O<108   # l
+O<108   # l
+O<111   # o
+O<32    # space
+O<87    # W
+O<111   # o
+O<114   # r
+O<108   # l
+O<100   # d
+O<33    # !
+Z<1

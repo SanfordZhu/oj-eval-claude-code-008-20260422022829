@@ -1,0 +1,34 @@
+# Problem 2277: if else
+# Read first char into memory[0]
+[0]<I
+# Read second char into memory[1]
+[1]<I
+
+# Get first char value
+A<[0]
+# Get second char value
+B<[1]
+
+# Set flag at memory[A] = 1
+[A]<1
+
+# Check flag at memory[B]
+C<[B]
+
+# If C == 1, chars are equal
+# Output '1' (ASCII 49) if equal, '0' (ASCII 48) if not
+# Create output lookup: mem[0] = 48 ('0'), mem[1] = 49 ('1')
+[2]<48
+[3]<49
+
+# Use C as index (0 or 1) to get output char
+# Need to add 2 to C to get address 2 or 3
+# Create addition table: mem[100+C] = 2+C
+[100]<2
+[101]<3
+
+# D = mem[100+C] using [C+100] syntax
+D<[C+100]
+O<[D]
+
+Z<1

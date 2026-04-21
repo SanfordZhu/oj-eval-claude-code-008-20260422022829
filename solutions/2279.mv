@@ -1,0 +1,38 @@
+# Problem 2279: echo
+# Main loop
+# Read char into memory[0]
+[0]<I
+
+# Check if zero (EOF)
+A<[0]
+# Create zero test: mem[100] = 0, mem[101] = 1
+[100]<0
+[101]<1
+# Compare A with 0: if A == 0, set B = 1, else B = 0
+# Use memory[A] as flag (memory initialized to 0)
+# Set mem[0] = 1 temporarily
+[0]<1
+B<[A]
+# Restore mem[0] from A (but A might be 0)
+# Actually, we lost the char. Need different approach.
+
+# Let's try different approach: store char in mem[1]
+[1]<I
+A<[1]
+
+# Check if A == 0
+# Set mem[0] = 1
+[0]<1
+B<[A]
+
+# If B == 1, then A == 0 (EOF)
+# Create halt table: mem[200] = 0 (continue), mem[201] = 1 (halt)
+[200]<0
+[201]<1
+C<[200+B]
+Z<[C]
+
+# If not EOF, output char
+O<A
+
+# Loop back to start (program loops automatically)

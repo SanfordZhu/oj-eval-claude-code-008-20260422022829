@@ -1,0 +1,29 @@
+# Problem 2279: echo - version 2
+# Read char
+[0]<I
+# Output char (if 0, outputs nothing)
+O<[0]
+
+# Check if char was 0 (EOF)
+# Create zero detection: mem[1] = 1
+[1]<1
+# If [0] == 0, then [[0]] = [0] = 0? No.
+# Actually, need to compare [0] with 0
+# Use memory[[0]]: if [0] == 0, then [[0]] = [0] = 0
+# if [0] != 0, then [[0]] is some memory location
+# Set mem[0] = 1? But [0] contains char.
+
+# Better: use A = [0], then check mem[A]
+A<[0]
+# Set mem[0] = 1 (temporary)
+[0]<1
+B<[A]
+# Now B = 1 if A == 0, else B = 0 (since memory initialized 0)
+
+# Set Z = B (halt if B == 1)
+Z<B
+
+# But need to restore [0] for next iteration
+# Actually, [0] was overwritten with 1
+# Store char in [2] instead
+# Let me rewrite...

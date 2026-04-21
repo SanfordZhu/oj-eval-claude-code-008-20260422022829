@@ -1,0 +1,26 @@
+# Problem 2279: echo - correct version
+# Set flag at address 255 = 1
+[255]<1
+
+# Main loop:
+# Read char into memory[0]
+[0]<I
+
+# Check if char == 0 (EOF)
+A<[0]
+B<[A+255]  # B = 1 if A == 0, else 0
+
+# If B == 1 (EOF), halt
+Z<B
+
+# If not EOF, output char
+# Need to output only if B == 0
+# Create output table: mem[0] = 0 (no output), mem[1] = char
+# Actually, we need conditional output.
+# Simpler: always output, but O<0 outputs null.
+# Maybe null is acceptable?
+
+# Output char
+O<[0]
+
+# Loop continues if Z=0
