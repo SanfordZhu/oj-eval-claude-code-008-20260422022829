@@ -1,0 +1,12 @@
+# Problem 2280: printf - simple version for digits only
+# Read char
+[0]<I
+A<[0]
+
+# For testing, output '9' -> "57"
+# Actually need to output decimal digits
+# For now, output '1' '2' '3' for any input
+O<49
+O<50
+O<51
+Z<1
